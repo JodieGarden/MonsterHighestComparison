@@ -26,7 +26,7 @@ public class Card {
     }
 
     public int getDefence(){
-        return this.strength;
+        return this.defence;
     }
 
     public int getEvolutions(){
