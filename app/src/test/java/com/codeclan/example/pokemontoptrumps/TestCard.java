@@ -23,4 +23,19 @@ public class TestCard {
     public void testGetName(){
         assertEquals("Blastoise", card.getName());
     }
+
+    @Test
+    public void testGetStrength(){
+        assertEquals(79, card.getStrength());
+    }
+
+    @Test
+    public void testGetDefence(){
+        assertEquals(100, card.getDefence());
+    }
+
+    @Test
+    public void testGetEvolutions() {
+        assertEquals(4, card.getEvolutions());
+    }
 }
