@@ -26,6 +26,6 @@ public class TestPlayer {
     public void testGetCard(){
         Card card = dealer.deal();
         player.takeCard(card);
-        assertNotNull(player.getCard());
+        assertNotNull(player.getCard(card.getStrength()));
     }
 }

@@ -18,7 +18,7 @@ public class Player {
         this.card = card;
     }
 
-    public Card getCard(){
+    public Card getCard(int strength){
         return this.card;
     }
 
