@@ -36,4 +36,19 @@ public class TestGame {
         comp.takeCard(new Card("Charizard", 90, 80, 2));
         assertEquals("Player 2 wins", game.compareStrength());
     }
+
+    @Test
+    public void testCompareDefence(){
+        player1.takeCard(new Card("Blastoise", 89, 83,1));
+        comp.takeCard(new Card("Charizard", 90, 80, 2));
+        assertEquals("Player 1 wins", game.compareDefence());
+    }
+
+    @Test
+    public void testCompareEvolutions(){
+        player1.takeCard(new Card("Blastoise", 89, 83,1));
+        comp.takeCard(new Card("Charizard", 90, 80, 1));
+        assertEquals("It's a draw", game.compareEvolution());
+    }
+
 }

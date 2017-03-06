@@ -3,6 +3,8 @@ package com.codeclan.example.pokemontoptrumps;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import static android.R.attr.id;
+
 /**
  * Created by user on 03/03/2017.
  */
@@ -42,7 +44,34 @@ public class Game {
 
     }
 
-    public String 
+    public String compareDefence(){
+        int player1Hand  = (players.get(0).card.getDefence());
+        int player2Hand = (players.get(1).card.getDefence());
+
+        if(player1Hand == player2Hand){
+            return "It's a draw";
+        }
+
+        if (player1Hand > player2Hand){
+            return "Player 1 wins";
+        }
+        else
+            return "Player 2 wins";
+    }
+
+    public String compareEvolution(){
+        int player1Hand = (players.get(0).card.getEvolutions());
+        int player2Hand = (players.get(1).card.getEvolutions());
+
+        if (player1Hand == player2Hand){
+            return "It's a draw";
+        }
+        if (player1Hand > player2Hand){
+            return "Player 1 wins";
+        }
+        else
+            return "Player 2 wins";
+    }
 
 
 }
