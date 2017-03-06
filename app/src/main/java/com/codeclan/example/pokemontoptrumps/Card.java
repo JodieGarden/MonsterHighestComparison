@@ -5,6 +5,8 @@ package com.codeclan.example.pokemontoptrumps;
  */
 
 public class Card {
+    Deck deck;
+    Card card;
     String name;
     int strength;
     int defence;
@@ -16,6 +18,9 @@ public class Card {
         this.defence = defence;
         this.evolutions = evolutions;
     }
+
+
+
 
     public String getName() {
         return this.name;
@@ -33,5 +38,9 @@ public class Card {
         return this.evolutions;
     }
 
+
+//    public int getCard(){
+//        return deck.hashCode("Blastoise");
+//    }
 
 }

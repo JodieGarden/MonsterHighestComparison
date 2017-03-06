@@ -5,4 +5,16 @@ package com.codeclan.example.pokemontoptrumps;
  */
 
 public class Dealer {
+
+    Deck deck;
+
+    Dealer(Deck deck){
+        this.deck = deck;
+        this.deck.shuffle();
+    }
+
+    public Card deal(){
+        Card card = deck.removeCard();
+        return card;
+    }
 }
