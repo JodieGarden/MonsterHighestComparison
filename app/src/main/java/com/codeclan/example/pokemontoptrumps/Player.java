@@ -8,9 +8,11 @@ public class Player {
 
     Card card;
     String name;
+//    int chosenAttribute;
 
     public Player(String name){
         this.name = name;
+
     }
 
 
@@ -22,5 +24,8 @@ public class Player {
         return this.card;
     }
 
-
+//    public Player setChosenAttribute(int chosenAttribute) {
+//        this.chosenAttribute = chosenAttribute;
+//        return chosenAttribute;
+//    }
 }

@@ -19,6 +19,8 @@ public class TestGame {
     Player player1;
     Player comp;
     Game game;
+    Card card;
+
 
     @Before
     public void before(){
@@ -31,17 +33,26 @@ public class TestGame {
     }
 
     @Test
+         public void testPlayerArrayLength() {
+        assertEquals(2, game.playerArrayLength());
+    }
+
+
+//        }
+
+    @Test
     public void testCompareStrength(){
         player1.takeCard(new Card("Blastoise", 89, 83,1));
         comp.takeCard(new Card("Charizard", 90, 80, 2));
-        assertEquals("Player 2 wins", game.compareStrength());
+        assertEquals("Comp wins", game.compareStrength());
     }
 
     @Test
     public void testCompareDefence(){
         player1.takeCard(new Card("Blastoise", 89, 83,1));
         comp.takeCard(new Card("Charizard", 90, 80, 2));
-        assertEquals("Player 1 wins", game.compareDefence());
+
+        assertEquals("Comp wins", game.compareDefence());
     }
 
     @Test

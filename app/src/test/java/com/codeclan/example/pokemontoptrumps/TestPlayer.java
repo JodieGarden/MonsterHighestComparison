@@ -3,6 +3,7 @@ package com.codeclan.example.pokemontoptrumps;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -28,4 +29,6 @@ public class TestPlayer {
         player.takeCard(card);
         assertNotNull(player.getCard(card.getStrength()));
     }
+
+
 }

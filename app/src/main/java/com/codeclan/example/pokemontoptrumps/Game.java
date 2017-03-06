@@ -1,9 +1,11 @@
 package com.codeclan.example.pokemontoptrumps;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import static android.R.attr.id;
+import static android.R.attr.cacheColorHint;
+import static android.R.attr.canRequestEnhancedWebAccessibility;
+import static android.R.attr.name;
+import static android.media.CamcorderProfile.get;
 
 /**
  * Created by user on 03/03/2017.
@@ -13,19 +15,33 @@ public class Game {
 
     ArrayList<Player> players;
     Dealer dealer;
+    Player player1;
+    Player comp;
     Card card;
+    int result1;
+    int result2;
+
+
+
 
     public Game(ArrayList<Player> players, Dealer dealer){
+
         this.players = players;
         this.dealer = dealer;
+
+    }
+
+    public int playerArrayLength(){
+        return players.size();
     }
 
     public void play(){
-        for (Player player: players){
+        for (Player player : players){
             Card card = dealer.deal();
             player.takeCard(card);
         }
     }
+
 
 
     public String compareStrength(){
@@ -37,26 +53,25 @@ public class Game {
         }
 
         if(player1Hand > player2Hand){
-            return"Player 1 wins";
+            return players.get(0).name + " wins";
         }
         else
-            return "Player 2 wins";
+            return players.get(1).name + " wins";
 
     }
 
-    public String compareDefence(){
-        int player1Hand  = (players.get(0).card.getDefence());
+    public String compareDefence() {
+        int player1Hand = (players.get(0).card.getDefence());
         int player2Hand = (players.get(1).card.getDefence());
 
         if(player1Hand == player2Hand){
             return "It's a draw";
         }
-
-        if (player1Hand > player2Hand){
-            return "Player 1 wins";
+        if(player1Hand == player2Hand){
+            return players.get(0).name + " wins";
         }
         else
-            return "Player 2 wins";
+            return players.get(1).name + " wins";
     }
 
     public String compareEvolution(){
@@ -67,10 +82,10 @@ public class Game {
             return "It's a draw";
         }
         if (player1Hand > player2Hand){
-            return "Player 1 wins";
+            return players.get(0).name + " wins";
         }
         else
-            return "Player 2 wins";
+            return players.get(1).name + " wins";
     }
 
 
