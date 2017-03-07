@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     Button playBtn;
-
+    ArrayList<Player> players;
+    Dealer dealer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OnPlayBtnClicked(View view) {
-
+        Game game = new Game(players, dealer);
+        game.play();
         startActivity(new Intent(MainActivity.this, PlayActivity.class));
     }
 }

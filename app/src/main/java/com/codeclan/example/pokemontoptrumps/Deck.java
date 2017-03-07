@@ -10,8 +10,8 @@ import static android.R.attr.name;
  */
 
 public class Deck {
-    ArrayList<Card> cards;
 
+    ArrayList<Card> cards;
 
     public Deck(){
         cards = new ArrayList<Card>();

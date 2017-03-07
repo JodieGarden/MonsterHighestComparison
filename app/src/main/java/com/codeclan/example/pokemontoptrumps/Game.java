@@ -14,6 +14,7 @@ import static android.media.CamcorderProfile.get;
 public class Game {
 
     ArrayList<Player> players;
+    ArrayList<Card> cards;
     Dealer dealer;
     Player player1;
     Player comp;
@@ -30,6 +31,7 @@ public class Game {
         this.dealer = dealer;
 
     }
+
 
     public int playerArrayLength(){
         return players.size();
