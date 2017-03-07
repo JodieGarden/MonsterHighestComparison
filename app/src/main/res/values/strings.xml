@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pokemon Top Trumps</string>
+    <string name="title_activity_play">PlayActivity</string>
 </resources>
