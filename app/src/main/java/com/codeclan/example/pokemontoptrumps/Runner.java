@@ -12,56 +12,66 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 public class Runner {
 
-    public static void main(String[] args) {
-        Player player1 = new Player("Jodie");
-        Player comp = new Player("Computer");
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String attr;
+        String result = new String();
+        String result2;
+        String result3;
+
+
+        ArrayList<Player>players = new ArrayList<Player>();
         Deck deck = new Deck();
-        ArrayList<Player> players = new ArrayList<Player>();
         Dealer dealer = new Dealer(deck);
-        String compPlay;
+        Player p1 = new Player("You");
+        Player computer = new Player("Misty");
+        players.add(p1);
+        players.add(computer);
 
-        Card card1 = new Card("Blastoise", 10, 11, 11);
-        Card card2 =new Card("Charizard", 10, 12, 12);
-        Card card3 =new Card("Mimikyu", 10, 12, 12);
-        Card card4 =new Card("Gyarados", 10, 23, 3);
-        Card card5 =new Card("Chikorita", 12, 3, 4);
-        Card card6 =new Card("Mew", 12, 2, 3);
-        Card card7 =new Card("Bulbasaur", 2, 12, 3);
-
-        deck.populateCards();
-        Game game = new Game(players,dealer);
-        ArrayList<Card> cards;
+        Game game = new Game (players, dealer);
 
 
-        Scanner scan = new Scanner(System.in);
-        Random generator = new Random();
-
-
-        System.out.println("Lets Battle!\n");
+        System.out.println("Welcome to Pokemon");
+        System.out.println();
         game.play();
-        System.out.println("Players card is " + card2.getName() + "." + "Defence: " + card2.getDefence() + "Evolutions: " + card2.getEvolutions() + "Strength:" + card2.getStrength() );
-//        System.out.println(player.card.getName() + player1.card.getEvolutions() + player1.card.getStrength() +player1.card.getDefence());
 
-//        String result = game.compareDefence();
-        String result1 = game.compareEvolution();
-        String result2 = game.compareStrength();
-//        System.out.println(result);
-        System.out.println(result1);
-        System.out.println(result2);
 
-//        comp = generator.nextInt(3) + 1;
+        System.out.println(players.get(0).card.getName()+"! I choose you!");
+        System.out.println(players.get(0).card.getStrength() +"strength");
+        System.out.println(players.get(0).card.getDefence() +"defence");
+        System.out.println(players.get(0).card.getEvolutions() +"evolutions");
+
+        System.out.println("Please select an attribute");
+
+        sc = new Scanner(System.in);
+        attr = sc.nextLine();
+        System.out.flush();
+
+
+
+//        System.out.println(players.get(1).card.getStrength() +"strength");
+//        System.out.println(players.get(1).card.getDefence() +"defence");
+//        System.out.println(players.get(1).card.getEvolutions() +"evolutions");
+
+        if(attr.contentEquals("strength")){
+            System.out.println(game.compareStrength());
+            System.out.println(players.get(1).card.getName() + " was the computers card.");
+            System.out.println(players.get(1).card.getStrength() + " strength");
+        }
+        else if (attr.contentEquals("defence")){
+            System.out.println(game.compareDefence());
+            System.out.println(players.get(1).card.getName() + " was the computers card.");
+            System.out.println(players.get(1).card.getDefence() + " defence");
+        }
+        else if(attr.contentEquals("evolutions")){
+            System.out.println(game.compareEvolution());
+            System.out.println(players.get(1).card.getName() + " was the computers card.");
+            System.out.println(players.get(1).card.getEvolutions() +" evolutions");
+
+        }
+
 //
-//
-//        if (comp == 1) {
-//            compPlay = "Strength";
-//            if (comp == 2)
-//                compPlay = "Evolutions";
-//            if (comp == 3)
-//                compPlay = "Defence";
-//
-//
-//        }
-//
+
     }
 }
 
